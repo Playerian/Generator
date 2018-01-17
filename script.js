@@ -13,13 +13,16 @@ function Create2DArray(rows) {
 }
 //Array Creating
 var map = Create2DArray(100);
-for (var a=0;a<100;a++) {
-     for (var b=0;b<100;b++) {
-         map[a][b] = "Boxes";
-     }
-}
+
 //Box Creating Function
 function Create(){
+    //Setting Properties for the boxes
+    for (var a=0;a<100;a++) {
+        for (var b=0;b<100;b++) {
+         map[a][b] = "Boxes";
+        }
+    }
+    //Create the boxes
     for (var c=0;c < InputA;c++) {
         for (var d=0;d < InputB;d++) {
             $("#map").append("<div "+"class='map'"+"style='left:"+c*20+"px;top:"+(d*20+100)+"px'"+" >#</div>");
