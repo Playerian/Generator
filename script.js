@@ -1,6 +1,6 @@
 //Variable that gets from input boxes
-var InputA = 10;
-var InputB = 10;
+var InputA;
+var InputB;
 //2d array function copied from web
 function Create2DArray(rows) {
   var arr = [];
@@ -13,7 +13,12 @@ function Create2DArray(rows) {
 }
 //Array Creating
 var map = Create2DArray(100);
-
+//Set nothing to all tiles
+for (var aa=0;aa < 100;aa++) {
+    for (var bb=0;bb < 1;bb++) {
+        map[aa][bb] = "Nothing";
+    }
+}
 //Box Creating Function
 function Create(){
     for (var c=0;c < InputA;c++) {
@@ -29,17 +34,25 @@ function Create(){
 $("#B").click(function(){
     //Clear Map
     $("#map").html("");
-    //Check Horizontal Inputs
+    //Clear Array
+    for (var aaa=0;aaa < 100;aaa++) {
+        for (var bbb=0;bb < 1;bbb++) {
+            map[aaa][bbb] = "Nothing";
+        }
+    }
+    //Check for Inputs
     InputA = $("#i1").val();
     InputB = $("#i2").val();
     //Randoming block attribute
-    for (var a=0;a<100;a++) {
-        for (var b=0;b<100;b++) {
+    for (var a=0;a < InputA;a++) {
+        for (var b=0;b < InputB;b++) {
             map[a][b] = "Wall";
         }
     }
-    //Call Function
+    //Call Function to create visual boxes
     Create();
 });
+
+
 
 
